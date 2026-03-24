@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Shop Proxy FF mduyk~</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #0f172a;
+    color: white;
+}
+
+.box {
+    background: #1e293b;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+#formBox {
+    display: none;
+    background: #1e293b;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#message {
+    margin-top: 10px;
+    color: yellow;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Shop proxy ff mduyk~</h1>
+
+<div class="box">
+    <h3>Ngày - 20k</h3>
+    <button onclick="buy('Ngày - 20k')">Mua ngay</button>
+</div>
+
+<div class="box">
+    <h3>Tuần - 40k</h3>
+    <button onclick="buy('Tuần - 40k')">Mua ngay</button>
+</div>
+
+<div class="box">
+    <h3>Tháng - 60k</h3>
+    <button onclick="buy('Tháng - 60k')">Mua ngay</button>
+</div>
+
+<div class="box">
+    <h3>Vĩnh viễn - 300k</h3>
+    <button onclick="buy('Vĩnh viễn - 300k')">Mua ngay</button>
+</div>
+
+<!-- FORM -->
+<div id="formBox">
+    <h2>Thanh toán MB Bank</h2>
+
+    <p>Ngân hàng: MB Bank</p>
+    <p>Chủ TK: CAO MINH DUY</p>
+    <p>STK: 0588807300000</p>
+
+    <p style="color: yellow;">
+        Nhập số điện thoại của bạn khi chuyển khoản để được hỗ trợ
+    </p>
+
+    <input type="text" id="phone" placeholder="Nhập số điện thoại của bạn">
+
+    <br>
+    <button onclick="submitForm()">Đã chuyển khoản</button>
+
+    <div id="message"></div>
+</div>
+
+<script>
+let selectedPlan = "";
+
+function buy(plan) {
+    selectedPlan = plan;
+    document.getElementById("formBox").style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function submitForm() {
+    let phone = document.getElementById("phone").value;
+
+    if (phone.trim() === "") {
+        alert("Vui lòng nhập số điện thoại");
+        return;
+    }
+
+    document.getElementById("message").innerText =
+        "Vui lòng đợi, chúng tôi sẽ trả lời bạn nếu số điện thoại nhập đúng!";
+}
+</script>
+
+</body>
+</html>
